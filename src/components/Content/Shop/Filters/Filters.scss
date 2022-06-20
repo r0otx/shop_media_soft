@@ -1,0 +1,58 @@
+.filters {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: end;
+  align-items: center;
+  &__params {
+    & select {
+      width: 140px;
+      padding: 5px;
+      border-radius:4px;
+      box-shadow: 1px 1px 3px 0 rgb(34 60 80 / 20%);
+      background: #fff;
+      border: none;
+      outline: none;
+      display: inline-block;
+      -webkit-appearance:none;
+      -moz-appearance: none;
+      appearance: none;
+      cursor: pointer;
+    }
+    & label {
+      position: relative;
+      &:after {
+        content:'<>';
+        font: 11px "Consolas", monospace;
+        color: #666;
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+        right: 8px;
+        top:2px;
+        padding: 0 0 2px;
+        border-bottom: 1px solid #fff;
+        position: absolute;
+        pointer-events: none;
+      }
+      &:before {
+        content: '';
+        right: 6px;
+        top:0;
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        position: absolute;
+        pointer-events: none;
+        display: block;
+      }
+    }
+  }
+  &__rating {
+    & input {
+      border-radius: 5px;
+      box-shadow: 1px 1px 3px 0 rgb(34 60 80 / 20%);
+      padding: 5px;
+      width: 100px;
+      margin-left: 10px;
+    }
+  }
+}
