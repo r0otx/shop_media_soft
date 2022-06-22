@@ -10,7 +10,9 @@ const Header = () => {
             <div className={classNames('header__container')}>
             <div className={classNames('header__inner')}>
             <div className={classNames('header__logo')}>
-                <img className={classNames('header__logo-img')} alt="Logo" src={logo}/>
+                <NavLink to='/'>
+                    <img className={classNames('header__logo-img')} alt="Logo" src={logo}/>
+                </NavLink>
             </div>
             <nav className={classNames('header__nav', 'nav')}>
                 <input id="nav__toggle" type="checkbox"/>

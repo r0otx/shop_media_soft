@@ -1,13 +1,20 @@
-import {SET_PRODUCTS, SET_LOADING, SET_ERROR, SET_SORT} from "../constants";
+import {
+    SET_PRODUCTS,
+    SET_LOADING,
+    SET_ERROR,
+    SET_SORT,
+    SET_FIND_INPUT,
+    ADD_TO_CART
+} from "../constants";
 
 const initialState = {
     products: [],
+    cart: [],
+    total: 0,
     isLoading: false,
     error: '',
-    sort: {
-        option: 'title',
-        input: ''
-    }
+    findInput: '',
+    sortOption: ''
 }
 
 const productsReducer = (state = initialState, {type, payload}) => {
@@ -31,14 +38,35 @@ const productsReducer = (state = initialState, {type, payload}) => {
             }
         }
         case SET_SORT: {
+            if (payload === 'title') {
+                return {
+                    ...state,
+                    products: [...state.products].sort((a, b) => a[payload].toString().localeCompare(b[payload].toString())),
+                    sortOption: payload
+                }
+            } else {
+                return {
+                    ...state,
+                    products: [...state.products].sort((a, b) => a[payload] - b[payload]),
+                    sortOption: payload
+                }
+            }
+        }
+        case SET_FIND_INPUT: {
             return {
                 ...state,
-                products: [...state.products].sort((a, b) => a[payload.option].toString().localeCompare(b[payload.option].toString())),
-                sort: {...payload}
+                findInput: payload
+            }
+        }
+        case ADD_TO_CART: {
+
+            return {
+                ...state,
+                cart: [...state.cart, payload]
             }
         }
         default:
-            return state;
+            return state
     }
 }
 
