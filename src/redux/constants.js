@@ -8,3 +8,4 @@ export const ADD_TO_CART = "ADD_TO_CART";
 export const SET_USER_DATA = "SET_USER_DATA";
 export const SET_UP_QUANTITY = "SET_UP_QUANTITY";
 export const SET_DOWN_QUANTITY = "SET_DOWN_QUANTITY";
+export const SET_ADDRESS = "SET_ADDRESS";
