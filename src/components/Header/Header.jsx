@@ -22,7 +22,7 @@ const Header = () => {
                 <ul className={classNames('nav__box')}>
                 <li><NavLink to='/' className={classNames('nav__item')}>Shop</NavLink></li>
                 <li><NavLink to='/cart' className={classNames('nav__item')}>Cart</NavLink></li>
-                <li><NavLink to='/order' className={classNames('nav__item')}>Checkout</NavLink></li>
+                <li><NavLink to='/order/user' className={classNames('nav__item')}>Checkout</NavLink></li>
                 </ul>
             </nav>
             </div>

@@ -1,9 +1,12 @@
 import React from "react";
+import Breadcrumbs from "../../../utils/Breadcrumbs/Breadcrumbs";
 
-const Order = () => {
+const Order = ({breadcrumbLinks}) => {
+
     return (
         <div>
-            Order
+            <Breadcrumbs pages={breadcrumbLinks} />
+            <div>Order</div>
         </div>
     );
 };

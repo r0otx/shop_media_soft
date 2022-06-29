@@ -4,6 +4,7 @@ import classNames from "classnames";
 import Select from "../../../../common/Select/Select";
 import {useDispatch, useSelector} from "react-redux";
 import {setFindInput, setSort} from "../../../../redux/actions/products";
+import Input from "../../../../common/Input/Input";
 
 const Filters = () => {
 
@@ -30,10 +31,9 @@ const Filters = () => {
                     onChange={selectOption => selectHandle(selectOption) }/>
             </div>
             <div className={classNames('filters__rating')}>
-                <input
-                    value={sort.input}
-                    placeholder={'Find...'}
-                    onChange={evt => inputHandle(evt.target.value)}/>
+                <Input value={sort.input}
+                       placeholder={'Find...'}
+                       onChange={evt => inputHandle(evt.target.value)} />
             </div>
         </div>
     );

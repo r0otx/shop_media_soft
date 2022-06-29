@@ -4,12 +4,13 @@ import {
     SET_ERROR,
     SET_SORT,
     SET_FIND_INPUT,
-    ADD_TO_CART
+    ADD_TO_CART,
+    SET_UP_QUANTITY,
+    SET_DOWN_QUANTITY
 } from "../constants";
 
 const initialState = {
     products: [],
-    cart: [],
     total: 0,
     isLoading: false,
     error: '',
@@ -59,10 +60,21 @@ const productsReducer = (state = initialState, {type, payload}) => {
             }
         }
         case ADD_TO_CART: {
-
+                return {
+                    ...state,
+                    products: state.products.map(el => el.id === payload.id ? {...el, count: 1 } : {...el})
+                }
+        }
+        case SET_UP_QUANTITY: {
             return {
                 ...state,
-                cart: [...state.cart, payload]
+                products: state.products.map(el => el.id === payload ? {...el, count: el.count+1} : {...el})
+            }
+        }
+        case SET_DOWN_QUANTITY: {
+            return {
+                ...state,
+                products: state.products.map(el => el.id === payload ? {...el, count: el.count-1} : {...el})
             }
         }
         default:

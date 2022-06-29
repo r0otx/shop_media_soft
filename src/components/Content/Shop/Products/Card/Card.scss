@@ -31,12 +31,33 @@
   &__button {
 
   }
+  &__count {
+
+  }
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  &__up {
+
+  }
+  &__down {
+
+  }
+  &__count {
+    & input {
+      width: 20px;
+      text-align: center;
+    }
+  }
 }
 
 .button {
   padding: 10px;
   border: 1px solid #bf53e8;
   border-radius: 5px;
+  text-align: center;
   &:hover {
     background-color: #e8e8e8;
     transition-duration: .25s;

@@ -1,0 +1,63 @@
+.user {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  &__form {
+
+  }
+}
+
+.form {
+  &__row {
+    display: flex;
+  }
+  &__firstname {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 0 0 50%;
+  }
+  &__lastname {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 0 0 50%;
+  }
+  &__email {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 0 0 50%;
+  }
+  &__phone {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 0 0 50%;
+  }
+  &__comment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 0 0 100%;
+  }
+  & input, textarea {
+    width: 150px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 0 rgb(34 60 80 / 20%);
+    padding: 5px;
+    margin: 5px;
+  }
+  & textarea {
+    width: 100%;
+  }
+  &__button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bf53e8;
+    border-radius: 5px;
+  }
+  & label {
+    font-weight: 600;
+  }
+}

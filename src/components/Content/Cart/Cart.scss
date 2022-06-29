@@ -1,4 +1,19 @@
 .cart {
   display: flex;
   flex-wrap: wrap;
+  &__products {
+    flex: 0 0 80%;
+  }
+  &__total {
+    flex: 0 0 20%;
+    padding: 10px;
+    box-shadow: 1px 1px 4px 0 rgb(34 60 80 / 20%);
+  }
+  &__subtotal {
+    font-weight: 600;
+    font-size: 15px;
+  }
+  &__nextButton {
+    margin: 10px 0;
+  }
 }

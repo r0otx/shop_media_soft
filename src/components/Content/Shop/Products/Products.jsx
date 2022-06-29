@@ -4,7 +4,7 @@ import classNames from "classnames";
 import Card from "./Card/Card";
 import {useDispatch, useSelector} from "react-redux";
 import {useMemo} from "react";
-import {addToCart} from "../../../../redux/actions/products";
+import {addToCart, setDownQuantity, setUpQuantity} from "../../../../redux/actions/products";
 
 const Products = () => {
 
@@ -21,10 +21,18 @@ const Products = () => {
         dispatch(addToCart(item));
     }
 
+    const downQuantity = (id) => {
+        dispatch(setDownQuantity(id))
+    }
+
+    const upQuantity = (id) => {
+        dispatch(setUpQuantity(id))
+    }
+
     return (
         <div className={classNames('products')}>
             <div className={classNames('products__card')}>
-                <Card products={products} items={searchQuery} addCart={addCart} />
+                <Card products={products} items={searchQuery} addCart={addCart} upQuantity={upQuantity} downQuantity={downQuantity} />
             </div>
         </div>
     );
